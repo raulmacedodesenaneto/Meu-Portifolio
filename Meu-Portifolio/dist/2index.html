@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #f7f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 5px 10px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #00d1b2;
+        }
+
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .profile-pic {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-pic img {
+            border-radius: 50%;
+            max-width: 150px;
+            width: 100%; /* Ajuste automático para mobile */
+        }
+
+        .about-text {
+            flex: 2;
+            text-align: center;
+            padding: 0 15px;
+        }
+
+        .about-text h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .pagination {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .pagination a {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #545050;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .pagination a:hover {
+            background-color: #00d1b2;
+        }
+
+        .dots {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .dots span {
+            height: 10px;
+            width: 10px;
+            background-color: #333;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .dots span:hover {
+            background-color: #00d1b2;
+        }
+
+        @media (max-width: 768px) {
+            .about-text h1 {
+                font-size: 24px;
+            }
+
+            .about-text p {
+                font-size: 14px;
+            }
+
+            .navbar a {
+                font-size: 14px;
+                margin: 5px 8px;
+            }
+
+            .profile-pic img {
+                max-width: 120px;
+            }
+
+            .pagination a {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href=".html">My Work</a>
+            <a href="2.html">About Me</a>
+            <a href="3.html">Education</a>
+            <a href="4.html">Work Experience</a>
+            <a href="5.html">Cover</a>
+        </nav>
+
+        <div class="about-section">
+            <div class="profile-pic">
+                <img src="https://cdn-icons-png.flaticon.com/128/2409/2409387.png" alt="Apresentação do Raul Neto">
+            </div>
+            <div class="about-text">
+                <h1>About Me</h1>
+                <p>Olá, meu nome é Raul Macêdo de Sena Neto. Tenho 23 anos e tenho um hobby de programar. Sou um programador front-end iniciando minha carreira como programador de sites. Comecei minha carreira como estudante de ensino médio em escola pública quando tinha 17 anos e até hoje me identifico como um front-end.</p>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <a href="mailto:raulneto213@gmail.com">raulneto213@gmail.com</a>
+            <a href="mailto:raulneto213321@gmail.com">raulneto213321@gmail.com</a>
+            <a href="tel:+559293100355">+55 92 9310-0355</a>
+        </div>
+
+        <div class="dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</body>
+</html>
