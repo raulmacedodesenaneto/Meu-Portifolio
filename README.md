@@ -1,3 +1,5 @@
+Feito em REACT(JAVASCRIPT)
+
 # Meu Portfólio React
 
 Este projeto é um portfólio simples criado com React. Ele contém seções para sobre mim, projetos e contato.
