@@ -5,13 +5,21 @@ function Hero() {
   return (
     <section className="hero">
       <div className="hero-content">
-        <img
-          className="hero-profile"
-          src="/profile.jpg"  // coloque sua foto de perfil neste caminho (public/profile.jpg)
-          alt="Foto de Perfil"
-        />
-        <h1 className="hero-title">Bem-vindo ao Meu Portfólio</h1>
-        <p className="hero-subtitle">Desenvolvedor Full Stack | Criador de Experiências Web</p>
+        <div className="hero-badge">
+          <div className="hero-badge-ring">
+            <img
+              className="hero-profile"
+              src="/profile.jpg"
+              alt="Logo Raul Neto"
+            />
+          </div>
+          <div className="hero-badge-copy">
+            <span>Developer Raul Neto</span>
+            <strong>Computer Service</strong>
+          </div>
+        </div>
+        <h1 className="hero-title">Portfólio Raul Neto</h1>
+        <p className="hero-subtitle">Desenvolvedor Full Stack | Soluções web com identidade, performance e presença visual</p>
         <button className="hero-btn" onClick={() => {
           const aboutSection = document.getElementById('about');
           aboutSection?.scrollIntoView({ behavior: 'smooth' });
