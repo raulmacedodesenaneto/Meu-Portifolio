@@ -4,7 +4,7 @@ import './Footer.css';
 function Footer() {
   return (
     <footer>
-      <p>© {new Date().getFullYear()} Meu Portfólio. Todos os direitos reservados.</p>
+      <p>© {new Date().getFullYear()} Raul Neto. Portfólio profissional com foco em presença digital e experiência web.</p>
     </footer>
   );
 }

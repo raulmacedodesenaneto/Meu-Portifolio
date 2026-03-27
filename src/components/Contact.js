@@ -35,7 +35,9 @@ function Contact() {
       <div className="contact-container">
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-group">
+            <label className="sr-only" htmlFor="contact-name">Seu nome</label>
             <input
+              id="contact-name"
               type="text"
               name="name"
               placeholder="Seu Nome"
@@ -45,7 +47,9 @@ function Contact() {
             />
           </div>
           <div className="form-group">
+            <label className="sr-only" htmlFor="contact-email">Seu email</label>
             <input
+              id="contact-email"
               type="email"
               name="email"
               placeholder="Seu Email"
@@ -55,7 +59,9 @@ function Contact() {
             />
           </div>
           <div className="form-group">
+            <label className="sr-only" htmlFor="contact-message">Sua mensagem</label>
             <textarea
+              id="contact-message"
               name="message"
               placeholder="Sua Mensagem"
               rows="5"
@@ -64,7 +70,7 @@ function Contact() {
               required
             ></textarea>
           </div>
-          <button type="submit" className="submit-btn">Enviar</button>
+          <button type="submit" className="submit-btn">Enviar por Email</button>
         </form>
 
         <div className="contact-info">

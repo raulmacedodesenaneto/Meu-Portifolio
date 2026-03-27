@@ -1,5 +1,6 @@
 .header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(120deg, rgba(36, 18, 84, 0.94) 0%, rgba(97, 42, 166, 0.94) 55%, rgba(40, 155, 224, 0.92) 100%);
+  backdrop-filter: blur(14px);
   padding: 25px 40px;
   color: white;
   display: flex;
@@ -9,6 +10,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .header-brand {
@@ -62,10 +64,12 @@
 .header nav a {
   color: white;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1rem;
   transition: all 0.3s ease;
   position: relative;
+  padding: 8px 0;
+  opacity: 0.92;
 }
 
 .header nav a::after {
@@ -81,6 +85,10 @@
 
 .header nav a:hover::after {
   width: 100%;
+}
+
+.header nav a:hover {
+  opacity: 1;
 }
 
 @media (max-width: 768px) {

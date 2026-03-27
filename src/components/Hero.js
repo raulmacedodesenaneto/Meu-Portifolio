@@ -20,12 +20,31 @@ function Hero() {
         </div>
         <h1 className="hero-title">Portfólio Raul Neto</h1>
         <p className="hero-subtitle">Desenvolvedor Full Stack | Soluções web com identidade, performance e presença visual</p>
-        <button className="hero-btn" onClick={() => {
-          const aboutSection = document.getElementById('about');
-          aboutSection?.scrollIntoView({ behavior: 'smooth' });
-        }}>
-          Explorar Meus Projetos
-        </button>
+        <div className="hero-actions">
+          <button className="hero-btn" onClick={() => {
+            const projectsSection = document.getElementById('projects');
+            projectsSection?.scrollIntoView({ behavior: 'smooth' });
+          }}>
+            Explorar Meus Projetos
+          </button>
+          <a className="hero-secondary-btn" href="#contact">
+            Falar Comigo
+          </a>
+        </div>
+        <div className="hero-highlights" aria-label="Destaques profissionais">
+          <div className="hero-highlight-card">
+            <strong>React</strong>
+            <span>Interfaces modernas</span>
+          </div>
+          <div className="hero-highlight-card">
+            <strong>Front-end</strong>
+            <span>Design responsivo</span>
+          </div>
+          <div className="hero-highlight-card">
+            <strong>Entrega</strong>
+            <span>Foco em performance</span>
+          </div>
+        </div>
       </div>
       <div className="hero-background">
         <div className="shape shape-1"></div>

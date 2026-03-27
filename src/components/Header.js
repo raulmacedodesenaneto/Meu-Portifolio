@@ -13,7 +13,7 @@ function Header() {
           <h1>Raul Neto</h1>
         </div>
       </div>
-      <nav>
+      <nav aria-label="Navegação principal">
         <a href="#about">Sobre</a>
         <a href="#projects">Projetos</a>
         <a href="#contact">Contato</a>
