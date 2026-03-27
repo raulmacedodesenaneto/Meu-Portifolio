@@ -76,6 +76,7 @@ function Contact() {
         <div className="contact-info">
           <h3>Outras Formas de Contato</h3>
           <p><strong>Email:</strong> <a href="mailto:raulneto213@gmail.com">raulneto213@gmail.com</a></p>
+          <p><strong>WhatsApp:</strong> <a href="https://wa.me/5592993100355" target="_blank" rel="noreferrer">+55 92 99310-0355</a></p>
           <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/raul-neto-472480392/" target="_blank" rel="noreferrer">linkedin.com/in/raul-neto-472480392</a></p>
           <p><strong>GitHub:</strong> <a href="https://github.com/raulmacedodesenaneto" target="_blank" rel="noreferrer">github.com/raulmacedodesenaneto</a></p>
         </div>
