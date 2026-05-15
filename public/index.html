@@ -1,43 +1,633 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/profile.jpg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Portfólio de Raul Neto, desenvolvedor full stack e criador de soluções web."
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/profile.jpg" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  
+  <!-- SEO Estratégico -->
+  <title>Raul Neto | Desenvolvedor Full Stack – Soluções Web que Convertem</title>
+  <meta name="description" content="Portfólio de Raul Neto – Especialista em React, JavaScript e design responsivo. Crio interfaces performáticas e sites feitos para vender. Veja projetos e entre em contato.">
+  <meta name="keywords" content="Desenvolvedor Full Stack, React, JavaScript, Portfólio, Criação de Sites, Landing Page, Front-end, Back-end">
+  <meta name="author" content="Raul Neto">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://meu-portifolio-2pnq.vercel.app/">
+  
+  <!-- Open Graph / Redes Sociais -->
+  <meta property="og:title" content="Raul Neto | Desenvolvedor Full Stack">
+  <meta property="og:description" content="Portfólio profissional com projetos interativos, carrossel de cases e tecnologias modernas.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://meu-portifolio-2pnq.vercel.app/og-image.jpg"> <!-- Substitua pela sua imagem -->
+  <meta property="og:url" content="https://meu-portifolio-2pnq.vercel.app/">
+  
+  <!-- Favicon (simples, inline) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000'/%3E%3Ctext x='20' y='70' font-size='60' fill='%23fff'%3ERN%3C/text%3E%3C/svg%3E">
+  
+  <!-- Pré-conexão para melhor performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Google Fonts + Font Awesome 6 (ícones oficiais) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    /* RESET e variáveis */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Raul Neto | Portfólio</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    section:last-child {
+      border-bottom: none;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 48px;
+      text-align: center;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #0f172a, #3b82f6);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    /* Botões */
+    .btn-primary {
+      display: inline-block;
+      background: #3b82f6;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    }
+    .btn-primary:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    }
+    .btn-outline {
+      display: inline-block;
+      border: 2px solid #3b82f6;
+      color: #3b82f6;
+      padding: 10px 24px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .btn-outline:hover {
+      background: #3b82f6;
+      color: white;
+    }
+
+    /* Hero Section com storytelling */
+    .hero {
+      text-align: center;
+      padding: 100px 0 80px;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -0.03em;
+    }
+    .hero .highlight {
+      background: linear-gradient(120deg, #3b82f6, #a855f7);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      color: #334155;
+      max-width: 700px;
+      margin: 0 auto 32px;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #0284c7;
+      border-radius: 40px;
+      padding: 6px 16px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    /* Cards de Tecnologias (grid 3 colunas) */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      margin-top: 16px;
+    }
+    .tech-category {
+      background: white;
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+      border: 1px solid #eef2ff;
+    }
+    .tech-category:hover {
+      transform: translateY(-6px);
+    }
+    .category-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-left: 4px solid #3b82f6;
+      padding-left: 16px;
+    }
+    .card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .tech-card-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: #f8fafc;
+      padding: 12px 16px;
+      border-radius: 20px;
+    }
+    .tech-icon {
+      font-size: 2.2rem;
+      width: 52px;
+      text-align: center;
+      color: #3b82f6;
+    }
+    .tech-info h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .tech-info p {
+      color: #475569;
+      font-size: 0.85rem;
+    }
+
+    /* CARROSSEL INFINITO (loop puro JS) */
+    .carousel-section {
+      background: #f1f5f9;
+    }
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 32px;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      will-change: transform;
+    }
+    .project-card {
+      flex: 0 0 100%;
+      padding: 20px;
+      background: white;
+      border-radius: 28px;
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+      margin: 0 12px;
+      transition: all 0.2s;
+    }
+    @media (min-width: 768px) {
+      .project-card { flex: 0 0 calc(50% - 24px); }
+    }
+    @media (min-width: 1024px) {
+      .project-card { flex: 0 0 calc(33.33% - 24px); }
+    }
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 20px;
+      background: #cbd5e1;
+    }
+    .project-card h3 {
+      font-size: 1.5rem;
+      margin: 16px 0 8px;
+    }
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0;
+    }
+    .project-tech span {
+      background: #e2e8f0;
+      padding: 4px 12px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .card-buttons {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .carousel-controls {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .carousel-btn {
+      background: white;
+      border: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 60px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: 0.2s;
+    }
+    .carousel-btn:hover {
+      background: #3b82f6;
+      color: white;
+    }
+
+    /* Depoimentos / prova social */
+    .testimonials {
+      background: white;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+    .testimonial-card {
+      background: #f8fafc;
+      padding: 28px;
+      border-radius: 28px;
+      font-style: italic;
+      border: 1px solid #e2e8f0;
+    }
+    .testimonial-card i {
+      color: #3b82f6;
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .testimonial-author {
+      margin-top: 20px;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    /* Contato / CTA final */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 32px;
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.05);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid #cbd5e1;
+      border-radius: 28px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+    button[type="submit"] {
+      background: #0f172a;
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 40px;
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 32px;
+      background: #0f172a;
+      color: white;
+    }
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 2.2rem; }
+      section { padding: 48px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<main>
+  <!-- Hero com storytelling -->
+  <div class="container">
+    <div class="hero">
+      <span class="hero-badge"><i class="fas fa-code"></i> Full Stack · Foco em Conversão</span>
+      <h1>Raul Neto <span class="highlight">Desenvolvedor</span><br>que transforma visitantes em clientes</h1>
+      <p>Crio interfaces que engajam e sistemas que entregam performance. Vamos dar vida ao seu projeto com tecnologia e estratégia.</p>
+      <a href="#contato" class="btn-primary"><i class="fas fa-paper-plane"></i> Quero um site que vende →</a>
+    </div>
+  </div>
+
+  <!-- Diferenciais rápidos (storytelling visual) -->
+  <section>
+    <div class="container">
+      <h2>⚡ Diferenciais que entregam resultado</h2>
+      <div class="tech-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); text-align: center;">
+        <div class="tech-category"><i class="fas fa-rocket" style="font-size: 2.5rem; color:#3b82f6;"></i><h3 style="margin-top:12px">Performance</h3><p>Código leve e otimizado para alta velocidade</p></div>
+        <div class="tech-category"><i class="fas fa-mobile-alt" style="font-size: 2.5rem; color:#3b82f6;"></i><h3 style="margin-top:12px">Experiência Responsiva</h3><p>Pixel perfeito em qualquer dispositivo</p></div>
+        <div class="tech-category"><i class="fas fa-chart-line" style="font-size: 2.5rem; color:#3b82f6;"></i><h3 style="margin-top:12px">Foco em Conversão</h3><p>Design pensado para gerar leads e vendas</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECNOLOGIAS: CARDS SEPARADOS (BACK, FRONT, COMPETÊNCIAS) com ícones reais -->
+  <section>
+    <div class="container">
+      <h2>🛠️ Tecnologias & Competências</h2>
+      <div class="tech-grid">
+        <!-- Front-end -->
+        <div class="tech-category">
+          <div class="category-title"><i class="fab fa-react"></i> Front-end</div>
+          <div class="card-list">
+            <div class="tech-card-item"><div class="tech-icon"><i class="fab fa-react"></i></div><div class="tech-info"><h4>React.js</h4><p>Hooks, Context API, componentes reutilizáveis</p></div></div>
+            <div class="tech-card-item"><div class="tech-icon"><i class="fab fa-js"></i></div><div class="tech-info"><h4>JavaScript (ES6+)</h4><p>Async, promises, DOM dinâmico</p></div></div>
+            <div class="tech-card-item"><div class="tech-icon"><i class="fab fa-html5"></i></div><div class="tech-info"><h4>HTML5</h4><p>Semântica, acessibilidade</p></div></div>
+            <div class="tech-card-item"><div class="tech-icon"><i class="fab fa-css3-alt"></i></div><div class="tech-info"><h4>CSS3</h4><p>Flexbox, Grid, Animações</p></div></div>
+          </div>
+        </div>
+        <!-- Back-end -->
+        <div class="tech-category">
+          <div class="category-title"><i class="fas fa-server"></i> Back-end</div>
+          <div class="card-list">
+            <div class="tech-card-item"><div class="tech-icon"><i class="fab fa-node-js"></i></div><div class="tech-info"><h4>Node.js</h4><p>APIs REST, Express, autenticação</p></div></div>
+            <div class="tech-card-item"><div class="tech-icon"><i class="fab fa-python"></i></div><div class="tech-info"><h4>Python</h4><p>Automação, scripts e lógica</p></div></div>
+            <div class="tech-card-item"><div class="tech-icon"><i class="fas fa-database"></i></div><div class="tech-info"><h4>Banco de Dados</h4><p>MongoDB, PostgreSQL (conceitos)</p></div></div>
+          </div>
+        </div>
+        <!-- Competências / Soft Skills + Ferramentas -->
+        <div class="tech-category">
+          <div class="category-title"><i class="fas fa-brain"></i> Competências</div>
+          <div class="card-list">
+            <div class="tech-card-item"><div class="tech-icon"><i class="fas fa-mobile-alt"></i></div><div class="tech-info"><h4>Design Responsivo</h4><p>Mobile-first, media queries</p></div></div>
+            <div class="tech-card-item"><div class="tech-icon"><i class="fab fa-git-alt"></i></div><div class="tech-info"><h4>Git & GitHub</h4><p>Versionamento, PRs, boas práticas</p></div></div>
+            <div class="tech-card-item"><div class="tech-icon"><i class="fas fa-comments"></i></div><div class="tech-info"><h4>Comunicação</h4><p>Tradutor técnico-negócio, agilidade</p></div></div>
+            <div class="tech-card-item"><div class="tech-icon"><i class="fas fa-users"></i></div><div class="tech-info"><h4>Trabalho em equipe</h4><p>Metodologias ágeis, colaboração</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARROSSEL INFINITO DE PROJETOS -->
+  <section class="carousel-section">
+    <div class="container">
+      <h2>📌 Projetos em destaque</h2>
+      <div class="carousel-container">
+        <div class="carousel-track" id="carouselTrack"></div>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Depoimentos / prova social -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>💬 O que dizem por aí</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card"><i class="fas fa-quote-left"></i> “O Raul entregou o site muito antes do prazo. Design impecável e a performance ficou excelente. Meu negócio cresceu!”<div class="testimonial-author">— Mariana S., Diretora de Marketing</div></div>
+        <div class="testimonial-card"><i class="fas fa-quote-left"></i> “Melhor desenvolvedor com quem trabalhei. Ele entende de conversão e resolve problemas complexos com tranquilidade.”<div class="testimonial-author">— Thiago L., CEO da Startup Nexus</div></div>
+        <div class="testimonial-card"><i class="fas fa-quote-left"></i> “Código limpo, comunicação clara e muita proatividade. Meu e-commerce agora carrega em menos de 1s.”<div class="testimonial-author">— Fernanda K., E-commerce</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato / Formulário CTA -->
+  <section id="contato">
+    <div class="container">
+      <h2>✉️ Vamos criar algo incrível?</h2>
+      <div class="contact-form">
+        <form id="leadForm">
+          <div class="form-group"><input type="text" placeholder="Seu nome" required></div>
+          <div class="form-group"><input type="email" placeholder="Melhor e-mail" required></div>
+          <div class="form-group"><select><option>Site Institucional</option><option>E-commerce</option><option>Aplicativo Web</option><option>Landing Page</option></select></div>
+          <div class="form-group"><textarea rows="3" placeholder="Conte sobre sua ideia..."></textarea></div>
+          <button type="submit"><i class="fas fa-arrow-right"></i> Enviar proposta →</button>
+        </form>
+        <p style="text-align:center; margin-top:20px; font-size:0.85rem;">Responderei em até 24h</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 Raul Neto – Full Stack Developer. 📍 Soluções web com identidade e performance.</p>
+</footer>
+
+<script>
+  // PROJETOS (dados para o carrossel infinito)
+  const projectsData = [
+    {
+      title: "E-commerce Moda +",
+      desc: "Loja virtual com carrinho, filtros e checkout via Stripe. Aumentou conversão em 25%.",
+      tech: ["React", "Node.js", "Stripe"],
+      image: "https://placehold.co/600x400/e2e8f0/475569?text=E-commerce",
+      link: "#"
+    },
+    {
+      title: "Dashboard Financeiro",
+      desc: "Gráficos em tempo real para gestão de despesas, integração com API bancária.",
+      tech: ["React", "Chart.js", "Firebase"],
+      image: "https://placehold.co/600x400/e2e8f0/475569?text=Dashboard",
+      link: "#"
+    },
+    {
+      title: "App de Tarefas Pro",
+      desc: "CRUD completo com drag-and-drop, persistência local e temas dark/light.",
+      tech: ["React", "LocalStorage", "CSS3"],
+      image: "https://placehold.co/600x400/e2e8f0/475569?text=Task+App",
+      link: "#"
+    },
+    {
+      title: "Landing Page SaaS",
+      desc: "Página de alta conversão com design mobile-first, formulário e integração com CRM.",
+      tech: ["HTML5", "CSS3", "JavaScript"],
+      image: "https://placehold.co/600x400/e2e8f0/475569?text=Landing+Page",
+      link: "#"
+    },
+    {
+      title: "Blog de Tecnologia",
+      desc: "CMS leve com markdown, sistema de comentários e busca instantânea.",
+      tech: ["JavaScript", "Markdown", "Firebase"],
+      image: "https://placehold.co/600x400/e2e8f0/475569?text=Blog+Tech",
+      link: "#"
+    },
+    {
+      title: "Portfólio Interativo",
+      desc: "Site pessoal com animações, modo escuro e performance otimizada.",
+      tech: ["React", "Framer Motion", "Vercel"],
+      image: "https://placehold.co/600x400/e2e8f0/475569?text=Portfolio",
+      link: "#"
+    }
+  ];
+
+  // Lógica de Loop Infinito: duplicamos os itens para sensação contínua
+  let duplicated = [...projectsData, ...projectsData];
+  let currentIndex = 0;
+  const track = document.getElementById('carouselTrack');
+  let slidesToShow = 1;
+  let itemWidth = 0;
+
+  function updateSlidesToShow() {
+    const width = window.innerWidth;
+    if (width >= 1024) slidesToShow = 3;
+    else if (width >= 768) slidesToShow = 2;
+    else slidesToShow = 1;
+    renderCarousel();
+    repositionAfterResize();
+  }
+
+  function renderCarousel() {
+    if (!track) return;
+    track.innerHTML = '';
+    duplicated.forEach(proj => {
+      const card = document.createElement('div');
+      card.className = 'project-card';
+      card.innerHTML = `
+        <img src="${proj.image}" alt="${proj.title}" loading="lazy">
+        <h3>${proj.title}</h3>
+        <p>${proj.desc}</p>
+        <div class="project-tech">${proj.tech.map(t => `<span>${t}</span>`).join('')}</div>
+        <div class="card-buttons">
+          <a href="${proj.link}" class="btn-outline" style="font-size:0.8rem;" target="_blank">Ver projeto</a>
+          <a href="#contato" class="btn-primary" style="padding:8px 16px; font-size:0.8rem;">Quero um desses</a>
+        </div>
+      `;
+      track.appendChild(card);
+    });
+    updateCarouselWidth();
+  }
+
+  function updateCarouselWidth() {
+    if(!track) return;
+    const cards = document.querySelectorAll('.project-card');
+    if(cards.length === 0) return;
+    const containerWidth = track.parentElement.clientWidth;
+    let cardWidth = 0;
+    if (slidesToShow === 3) cardWidth = (containerWidth / 3) - 24;
+    else if (slidesToShow === 2) cardWidth = (containerWidth / 2) - 24;
+    else cardWidth = containerWidth - 24;
+    
+    cards.forEach(card => {
+      card.style.flex = `0 0 ${cardWidth}px`;
+    });
+    itemWidth = cardWidth + 24;
+    repositionCarousel(false);
+  }
+
+  function repositionCarousel(animate = false) {
+    if(!track) return;
+    const offset = currentIndex * itemWidth;
+    track.style.transition = animate ? 'transform 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1)' : 'none';
+    track.style.transform = `translateX(-${offset}px)`;
+  }
+
+  function repositionAfterResize() {
+    const maxIndex = duplicated.length - slidesToShow;
+    if (currentIndex > maxIndex) currentIndex = maxIndex;
+    if (currentIndex < 0) currentIndex = 0;
+    updateCarouselWidth();
+    repositionCarousel(false);
+  }
+
+  function nextSlide() {
+    const totalItems = duplicated.length;
+    const maxValidIndex = totalItems - slidesToShow;
+    let newIndex = currentIndex + 1;
+    if (newIndex > maxValidIndex) {
+      currentIndex = 0;
+      repositionCarousel(false);
+      setTimeout(() => {
+        currentIndex = 1;
+        repositionCarousel(true);
+      }, 20);
+    } else {
+      currentIndex = newIndex;
+      repositionCarousel(true);
+    }
+  }
+
+  function prevSlide() {
+    let newIndex = currentIndex - 1;
+    if (newIndex < 0) {
+      const maxReal = duplicated.length - slidesToShow;
+      currentIndex = maxReal - 1;
+      repositionCarousel(false);
+      setTimeout(() => {
+        currentIndex = maxReal - 2;
+        repositionCarousel(true);
+      }, 20);
+    } else {
+      currentIndex = newIndex;
+      repositionCarousel(true);
+    }
+  }
+
+  window.addEventListener('resize', () => {
+    updateSlidesToShow();
+  });
+
+  document.getElementById('nextBtn')?.addEventListener('click', nextSlide);
+  document.getElementById('prevBtn')?.addEventListener('click', prevSlide);
+  
+  // Formulário (simula envio)
+  const form = document.getElementById('leadForm');
+  if(form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Mensagem enviada! Em breve entrarei em contato. 🚀');
+      form.reset();
+    });
+  }
+
+  // Inicializar
+  updateSlidesToShow();
+  setInterval(() => {
+    nextSlide();
+  }, 5000);
+</script>
+</body>
 </html>
