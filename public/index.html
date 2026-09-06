@@ -537,10 +537,10 @@
       <h2>✉️ Vamos criar algo incrível?</h2>
       <div class="contact-form">
         <form id="leadForm">
-          <div class="form-group"><input type="text" placeholder="Seu nome" required></div>
-          <div class="form-group"><input type="email" placeholder="Melhor e-mail" required></div>
-          <div class="form-group"><select><option>Site Institucional</option><option>E-commerce</option><option>Aplicativo Web</option><option>Landing Page</option></select></div>
-          <div class="form-group"><textarea rows="3" placeholder="Conte sobre sua ideia..."></textarea></div>
+          <div class="form-group"><input type="text" name="nome" placeholder="Seu nome" required></div>
+          <div class="form-group"><input type="email" name="email" placeholder="Melhor e-mail" required></div>
+          <div class="form-group"><select name="servico"><option>Site Institucional</option><option>E-commerce</option><option>Aplicativo Web</option><option>Landing Page</option></select></div>
+          <div class="form-group"><textarea name="mensagem" rows="3" placeholder="Conte sobre sua ideia..."></textarea></div>
           <button type="submit"><i class="fas fa-arrow-right"></i> Enviar proposta →</button>
         </form>
         <p style="text-align:center; margin-top:20px; font-size:0.85rem;">Responderei em até 24h</p>
@@ -738,13 +738,21 @@
   document.getElementById('nextBtn')?.addEventListener('click', nextSlide);
   document.getElementById('prevBtn')?.addEventListener('click', prevSlide);
   
-  // Formulário (simula envio)
+  // Formulário: abre o WhatsApp com os dados da proposta
   const form = document.getElementById('leadForm');
   if(form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      alert('Mensagem enviada! Em breve entrarei em contato. 🚀');
-      form.reset();
+      const data = new FormData(form);
+      const mensagem = [
+        'Olá, Raul! Gostaria de solicitar uma proposta.',
+        '',
+        `Nome: ${data.get('nome')}`,
+        `E-mail: ${data.get('email')}`,
+        `Serviço: ${data.get('servico')}`,
+        `Ideia: ${data.get('mensagem') || 'Não informada'}`
+      ].join('\n');
+      window.open(`https://wa.me/559293100355?text=${encodeURIComponent(mensagem)}`, '_blank', 'noopener,noreferrer');
     });
   }
 
